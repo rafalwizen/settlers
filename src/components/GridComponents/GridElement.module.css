@@ -1,0 +1,10 @@
+.item {
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.6);
+    margin: 5px;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    text-align-vertical: 'center';
+}
