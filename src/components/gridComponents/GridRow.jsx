@@ -1,9 +1,9 @@
 import GridElementsList from "./GridElementsList";
 
-function GridRow() {
+function GridRow(props) {
     return (
         <div style={{display: 'flex', flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
-            <GridElementsList/>
+            <GridElementsList rowNumber={props.rowNumber}/>
         </div>
     )
 }

@@ -1,6 +1,12 @@
 .item {
     margin: 0;
-    padding: 5px;
-    height: 30px;
-    width: 30px;
+    padding: 0;
+    border-width: 4px;
+    border-color: #0aad28;
+    border-style: solid;
+}
+
+.selected {
+    border-width: 4px;
+    border-color: #ff0000ff;
 }

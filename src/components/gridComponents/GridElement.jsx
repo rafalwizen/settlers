@@ -1,26 +1,23 @@
 import classes from './GridElement.module.css';
-import RockElement from "./gridElementTypes/RockElement";
-import GrassElement from "./gridElementTypes/GrassElement";
-import TreeElement from "./gridElementTypes/TreeElement";
+import React, { useState } from 'react';
 
-function GridElement() {
+function GridElement(props) {
+    const [selected, setSelected] = useState(false);
 
-    const size = 60;
-
-    const elementToRender = () => {
-        const rand = Math.random();
-        if (rand > 0.9) {
-            return <RockElement size={size}/>;
-        } else if (rand > 0.6) {
-            return <TreeElement size={size}/>;
+    const handleClick = (event) => {
+        if (selected) {
+            setSelected(false);
         } else {
-            return <GrassElement size={size}/>;
+            setSelected(true);
         }
-    }
+    };
 
     return (
-        <div className={classes.item} style={{width: size, height: size}}>
-            {elementToRender()}
+        <div className={selected ? `${classes.item} ${classes.selected}` : `${classes.item}`}
+             style={{width: props.size, height: props.size}}>
+            <div onClick={handleClick}>
+                {props.elementToRender}
+            </div>
         </div>
     );
 }

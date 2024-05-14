@@ -1,7 +1,4 @@
 .tree {
     background-color: #0aad28;
-    margin: 0;
-    padding: 5px;
-    height: 30px;
-    width: 30px;
+    border-color: #0aad28;
 }
