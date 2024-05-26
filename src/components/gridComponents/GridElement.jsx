@@ -1,16 +1,24 @@
 import classes from './GridElement.module.css';
-import React, { useState, useRef  } from 'react';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 
 import RockElement from "./gridElementTypes/RockElement";
 import TreeElement from "./gridElementTypes/TreeElement";
 import GrassElement from "./gridElementTypes/GrassElement";
+import {setSelectedElementCoordinates} from "../../store/slices/gridElementSlice";
 
 function GridElement(props) {
     const [selected, setSelected] = useState(false);
-    const [random, setRandom] = useState(Math.random());
-    const elementRef  = useRef(null);
-
+    const [random] = useState(Math.random());
+    const selectedElementCoordinates = useSelector((state) => state.gridElement.selectedElementCoordinates);
+    const dispatch = useDispatch();
     const size = 60;
+
+    useEffect(() => {
+        if (selectedElementCoordinates?.x !== props.colNumber || selectedElementCoordinates?.y !== props.rowNumber) {
+            setSelected(false);
+        }
+    }, [props.colNumber, props.rowNumber, selectedElementCoordinates])
 
     const elementToRender = () => {
         if (random > 0.9) {
@@ -23,16 +31,16 @@ function GridElement(props) {
     }
 
     const handleClick = () => {
-        console.log("elementRef")
-        console.log(elementRef.current)
-
-        setSelected(!selected);
-        props.onSelectedElementChange([props.colNumber, props.rowNumber]);
+        let coordinates;
+        setSelected((prevSelected) => {
+            coordinates = !prevSelected ? {x: props.colNumber, y: props.rowNumber} : undefined;
+            return !prevSelected;
+        });
+        dispatch(setSelectedElementCoordinates(coordinates));
     };
 
     return (
         <div className={selected ? `${classes.item} ${classes.selected}` : `${classes.item}`}
-             ref={elementRef}
              style={{width: size, height: size}}>
             <div onClick={handleClick}>
                 {elementToRender()}
