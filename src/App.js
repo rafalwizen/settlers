@@ -1,9 +1,9 @@
 import React from "react";
-import MainGrid from "./components/gridComponents/MainGrid"
+import MainGridWrapper from "./components/gridComponents/MainGridWrapper";
 
 function App() {
   return (
-    <MainGrid/>
+    <MainGridWrapper/>
   );
 }
 

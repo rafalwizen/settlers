@@ -1,6 +1,6 @@
-import classes from './RockElement.module.css';
+import classes from './Rock.module.css';
 
-function RockElement(props) {
+function Rock(props) {
 
     return (
         <div className={classes.rock} style={{width: props.size, height: props.size}}>
@@ -9,4 +9,4 @@ function RockElement(props) {
     );
 }
 
-export default RockElement;
+export default Rock;

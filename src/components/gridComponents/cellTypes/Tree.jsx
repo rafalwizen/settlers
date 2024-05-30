@@ -1,6 +1,6 @@
-import classes from './TreeElement.module.css';
+import classes from './Tree.module.css';
 
-function TreeElement(props) {
+function Tree(props) {
 
     return (
         <div className={classes.tree} style={{width: props.size, height: props.size}}>
@@ -9,4 +9,4 @@ function TreeElement(props) {
     );
 }
 
-export default TreeElement;
+export default Tree;

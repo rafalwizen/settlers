@@ -1,12 +1,12 @@
 import React from 'react';
-import GridElement from "./GridElement";
+import Cell from "./Cell";
 
 
 function GridElementsList(props) {
     const gridElements = [];
     for (let i = 0; i < 10; i++) {
         gridElements.push(
-            <GridElement
+            <Cell
                 rowNumber={props.rowNumber}
                 colNumber={i}
                 key={i}

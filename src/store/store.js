@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import gridElement from './slices/gridElementSlice';
+import cell from './slices/cellSlice';
 
 const store = configureStore({
     reducer: {
-        gridElement: gridElement,
+        cell: cell,
     },
 });
 
