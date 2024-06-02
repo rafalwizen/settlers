@@ -4,7 +4,7 @@ import Cell from "./Cell";
 
 function GridElementsList(props) {
     const gridElements = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < props.gridSize; i++) {
         gridElements.push(
             <Cell
                 rowNumber={props.rowNumber}
