@@ -1,0 +1,34 @@
+.item {
+    margin: 0;
+    padding: 0;
+    border-width: 4px;
+    border-color: #0aad28;
+    border-style: solid;
+}
+
+.selected {
+    border-width: 4px;
+    border-color: #ff0000ff !important;
+    border-style: solid !important;
+}
+
+.inBorders {
+    background-color: #0aad28;
+    border-style: dotted;
+}
+
+.inBorders.left {
+    border-left-color: #62409e;
+}
+
+.inBorders.right {
+    border-right-color: #62409e;
+}
+
+.inBorders.top {
+    border-top-color: #62409e;
+}
+
+.inBorders.bottom {
+    border-bottom-color: #62409e;
+}
