@@ -24,8 +24,8 @@ function Cell(props) {
     }, [props.colNumber, props.rowNumber, selectedCellCoordinates])
 
     const cellToRender = () => {
-        if (props.colNumber === Math.floor(props.gridSize / 2) && props.rowNumber === Math.floor(props.gridSize / 2)) {
-            thisCell = <Castle size={size} x={props.colNumber} y={props.rowNumber} sizeOfBorders={1}/>;
+        if (props.colNumber === 0 && props.rowNumber === 0) {
+            thisCell = <Castle size={size} x={props.colNumber} y={props.rowNumber} sizeOfBorders={2}/>;
         } else if (random > 0.9) {
             thisCell = <Rock size={size}/>;
         } else if (random > 0.6) {
